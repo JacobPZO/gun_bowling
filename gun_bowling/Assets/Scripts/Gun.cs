@@ -68,5 +68,22 @@ public class Gun : MonoBehaviour
         return direction;
     }
 
-    
+    private IEnumerator SpawnTrail(TrailRenderer Trail, RaycastHit Hit)
+    {
+        float time = 0;
+        Vector3 startPosition = Trail.transform.position;
+
+        while (time < 1)
+        {
+            Trail.transform.position = Vector3.Lerp(startPosition, Hit.point, time);
+            time += Time.deltaTime / Trail.time;
+
+            yield return null;
+        }
+        Animator.SetBool("IsShooting", false);
+        Trail.transform.position = Hit.point;
+        Instantiate(ImpactParticleSystem, Hit.point, Quaternion.LookRotation(Hit.normal));
+
+        Destroy(Trail.gameObject, Trail.time);
+    }
 }

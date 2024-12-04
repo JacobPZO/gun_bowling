@@ -94,7 +94,9 @@ public class PlayerController : MonoBehaviour
             return;
         Move();
         if(Input.GetKeyDown(KeyCode.Space))
-        TryJump();
+            TryJump();
+        if (Input.GetMouseButtonDown(0))
+            PlayerShoot();
         curTimeText.text = (Time.time - startTime).ToString("F2");
     }
 }
