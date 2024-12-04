@@ -20,6 +20,14 @@ public class PlayerController : MonoBehaviour
     private CapsuleCollider _col;
     public Camera playerCamera;
 
+    [SerializeField]
+    private Gun Gun;
+
+    public void PlayerShoot()
+    {
+        Gun.Shoot();
+    }
+
     void OnTriggerEnter (Collider other)
     {
         if(other.gameObject.CompareTag("Collectable"))
