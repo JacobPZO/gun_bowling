@@ -1988,7 +1988,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 0}
+  m_BackGroundColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3024,8 +3024,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d430c47da99824b4c9b5087ddcde6927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leaderboardCanvas: {fileID: 0}
-  leaderboardEntries: []
 --- !u!1 &1029751882
 GameObject:
   m_ObjectHideFlags: 0
@@ -3297,7 +3295,7 @@ MonoBehaviour:
     m_Bits: 1024
   distanceToGround: 0.1
   playerCamera: {fileID: 657198069}
-  Gun: {fileID: 0}
+  Gun: {fileID: 1515252404}
 --- !u!114 &1063406504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4551,7 +4549,7 @@ Transform:
   m_GameObject: {fileID: 1420048041}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.3, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4838,14 +4836,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AddBulletSpread: 1
   BulletSpreadVariance: {x: 0.02, y: 0.02, z: 0.02}
-  ShootingSystem: {fileID: 0}
-  BulletSpawnPoint: {fileID: 0}
-  ImpactParticleSystem: {fileID: 0}
-  BulletTrail: {fileID: 0}
+  ShootingSystem: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+  BulletSpawnPoint: {fileID: 1420048042}
+  BulletTrail: {fileID: 4565178031794666481, guid: b65212505fad723439c71a6b946e5b54, type: 3}
   ShootDelay: 0.5
   Mask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
 --- !u!1 &1531336604
 GameObject:
   m_ObjectHideFlags: 0

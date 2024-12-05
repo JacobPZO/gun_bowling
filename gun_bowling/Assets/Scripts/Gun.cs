@@ -15,8 +15,6 @@ public class Gun : MonoBehaviour
     [SerializeField]
     private Transform BulletSpawnPoint;
     [SerializeField]
-    private ParticleSystem ImpactParticleSystem;
-    [SerializeField]
     private TrailRenderer BulletTrail;
     [SerializeField]
     private float ShootDelay = 0.5f;
@@ -82,7 +80,6 @@ public class Gun : MonoBehaviour
         }
         Animator.SetBool("IsShooting", false);
         Trail.transform.position = Hit.point;
-        Instantiate(ImpactParticleSystem, Hit.point, Quaternion.LookRotation(Hit.normal));
 
         Destroy(Trail.gameObject, Trail.time);
     }
