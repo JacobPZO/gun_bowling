@@ -24,6 +24,8 @@ public class Gun : MonoBehaviour
     private Animator Animator;
     private float LastShootTime;
 
+    public float bulletForce;
+
     private void Awake()
     {
         Animator = GetComponent<Animator>();
@@ -39,6 +41,10 @@ public class Gun : MonoBehaviour
 
             if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask))
             {
+                if (hit.transform.tag == "Physics") 
+                { 
+                    hit.rigidbody.AddForceAtPosition(direction * bulletForce, hit.point); 
+                }
                 TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
 
                 StartCoroutine(SpawnTrail(trail, hit));
