@@ -13,13 +13,15 @@ public class Gun : MonoBehaviour
     [SerializeField]
     private ParticleSystem ShootingSystem;
     [SerializeField]
-    private Transform BulletSpawnPoint;
+    private Transform TrailSpawnPoint;
     [SerializeField]
     private TrailRenderer BulletTrail;
     [SerializeField]
     private float ShootDelay = 0.5f;
     [SerializeField]
     private LayerMask Mask;
+    [SerializeField]
+    private Transform BulletSpawnPoint;
 
     private Animator Animator;
     private float LastShootTime;
@@ -45,7 +47,7 @@ public class Gun : MonoBehaviour
                 { 
                     hit.rigidbody.AddForceAtPosition(direction * bulletForce, hit.point); 
                 }
-                TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
+                TrailRenderer trail = Instantiate(BulletTrail, TrailSpawnPoint.position, Quaternion.identity);
 
                 StartCoroutine(SpawnTrail(trail, hit));
 

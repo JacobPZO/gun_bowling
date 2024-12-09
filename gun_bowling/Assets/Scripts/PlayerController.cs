@@ -5,6 +5,7 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+    public float ammo;
     public float speed;
     public float jumpForce;
     private Rigidbody rig;
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
         startTime = Time.time;
         isPlaying = true;
         playButton.SetActive(false);
+        ammo = 2;
     }
 
     void End ()
@@ -96,7 +98,15 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
             TryJump();
         if (Input.GetMouseButtonDown(0))
+        {
             PlayerShoot();
-        curTimeText.text = (Time.time - startTime).ToString("F2");
+            --ammo;
+        }
+
+        if (Input.GetMouseButton(1))
+            Camera.main.fieldOfView = 10;
+        else
+            Camera.main.fieldOfView = 60;
+        curTimeText.text = (ammo).ToString();
     }
 }
