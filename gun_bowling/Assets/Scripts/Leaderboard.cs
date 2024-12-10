@@ -24,7 +24,7 @@ public class Leaderboard : MonoBehaviour
     {
         GetLeaderboardRequest getLeaderboardRequest = new GetLeaderboardRequest
         {
-            StatisticName = "FastestTime",
+            StatisticName = "pins",
             MaxResultsCount = 10
         };
 
@@ -127,7 +127,7 @@ public class Leaderboard : MonoBehaviour
                     // request.Statistics is a list, so multiple StatisticUpdate objects can be defined if required.
                     Statistics = new List<StatisticUpdate> 
                     {
-                        new StatisticUpdate { StatisticName = "FastestTime", Value = newScore },
+                        new StatisticUpdate { StatisticName = "pins", Value = newScore },
                     }
                 },
                 result => { Debug.Log("User statistics updated"); },

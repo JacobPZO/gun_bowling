@@ -19,9 +19,9 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public LayerMask waterLayer;
     public float distanceToGround = 0.1f;
-    private CapsuleCollider _col;
     public Camera playerCamera;
     public float score;
+    public Leaderboard Leaderboard;
 
     [SerializeField]
     private Gun Gun;
@@ -55,7 +55,8 @@ public class PlayerController : MonoBehaviour
         timeTaken = Time.time - startTime;
         isPlaying = false;
         playButton.SetActive(true);
-        Leaderboard.instance.SetLeaderboardEntry(-Mathf.RoundToInt(timeTaken * 1000.0f));
+        Leaderboard.OnLoggedIn();
+        Leaderboard.instance.SetLeaderboardEntry(-Mathf.RoundToInt(score * 1.0f));
     }
 
     void Move ()
@@ -79,10 +80,15 @@ public class PlayerController : MonoBehaviour
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(10);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        _col = GetComponent<CapsuleCollider>();
+
     }
 
     void Awake ()
@@ -102,7 +108,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             PlayerShoot();
-            --ammo;
+            if (ammo <= 0)
+            {
+                Delay();
+                End();
+            }
+
         }
 
         if (Input.GetMouseButton(1))

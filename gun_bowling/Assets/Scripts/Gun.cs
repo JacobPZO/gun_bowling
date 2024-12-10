@@ -23,6 +23,8 @@ public class Gun : MonoBehaviour
     [SerializeField]
     private Transform BulletSpawnPoint;
 
+    public PlayerController Player;
+
     private Animator Animator;
     private float LastShootTime;
 
@@ -53,6 +55,7 @@ public class Gun : MonoBehaviour
 
                 LastShootTime = Time.time;
             }
+            --Player.ammo;
         }
     }
 
