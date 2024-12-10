@@ -16,10 +16,12 @@ public class PlayerController : MonoBehaviour
     private bool isPlaying;
     public GameObject playButton;
     public TextMeshProUGUI curTimeText;
+    public TextMeshProUGUI scoreText;
     public LayerMask waterLayer;
     public float distanceToGround = 0.1f;
     private CapsuleCollider _col;
     public Camera playerCamera;
+    public float score;
 
     [SerializeField]
     private Gun Gun;
@@ -108,5 +110,6 @@ public class PlayerController : MonoBehaviour
         else
             Camera.main.fieldOfView = 60;
         curTimeText.text = (ammo).ToString();
+        scoreText.text = (score).ToString();
     }
 }

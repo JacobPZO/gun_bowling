@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1096194745078084864
+--- !u!1001 &5593735864781139989
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -68,29 +68,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: bowling_pin
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 50ea217e321e42545b6afb8759634d11, type: 3}
+      propertyPath: m_TagString
+      value: Physics
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 50ea217e321e42545b6afb8759634d11, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 160923122485122308}
+      addedObject: {fileID: 2939111301640405786}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 50ea217e321e42545b6afb8759634d11, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3259487421125654061}
+      addedObject: {fileID: 4386917842658452022}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 50ea217e321e42545b6afb8759634d11, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1208150265048834898}
   m_SourcePrefab: {fileID: 100100000, guid: 50ea217e321e42545b6afb8759634d11, type: 3}
---- !u!1 &285730644872022097 stripped
+--- !u!1 &4711214842699664708 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 50ea217e321e42545b6afb8759634d11, type: 3}
-  m_PrefabInstance: {fileID: 1096194745078084864}
+  m_PrefabInstance: {fileID: 5593735864781139989}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &160923122485122308
+--- !u!54 &2939111301640405786
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285730644872022097}
+  m_GameObject: {fileID: 4711214842699664708}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -111,13 +118,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &3259487421125654061
+--- !u!65 &4386917842658452022
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285730644872022097}
+  m_GameObject: {fileID: 4711214842699664708}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -130,5 +137,19 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.4586232, y: 5.742619, z: 2.2334003}
-  m_Center: {x: -0.058390297, y: 1.8623976, z: 0.03247102}
+  m_Size: {x: 2.6072564, y: 5.693407, z: 2.0524309}
+  m_Center: {x: 0.029252369, y: 1.8221012, z: -0.0024323661}
+--- !u!114 &1208150265048834898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4711214842699664708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2bb19772b30fb4594df9b0617dc2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: 0.4
+  Player: {fileID: 0}
