@@ -37,7 +37,7 @@ public class Gun : MonoBehaviour
 
     public void Shoot()
     {
-        if (LastShootTime + ShootDelay < Time.time)
+        if (LastShootTime + ShootDelay < Time.time && Player.ammo > 0)
         {
             Animator.SetBool("IsShooting", true);
             ShootingSystem.Play();

@@ -54,9 +54,8 @@ public class PlayerController : MonoBehaviour
     {
         timeTaken = Time.time - startTime;
         isPlaying = false;
-        playButton.SetActive(true);
         Leaderboard.OnLoggedIn();
-        Leaderboard.instance.SetLeaderboardEntry(-Mathf.RoundToInt(score * 1.0f));
+        Leaderboard.instance.SetLeaderboardEntry(Mathf.RoundToInt(score * 1.0f));
     }
 
     void Move ()
@@ -80,9 +79,10 @@ public class PlayerController : MonoBehaviour
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
-    IEnumerator Delay()
+    private IEnumerator EndDelay(float delay)
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(delay);
+        End();
     }
 
     // Start is called before the first frame update
@@ -110,8 +110,7 @@ public class PlayerController : MonoBehaviour
             PlayerShoot();
             if (ammo <= 0)
             {
-                Delay();
-                End();
+                StartCoroutine(EndDelay(5.5f));
             }
 
         }
